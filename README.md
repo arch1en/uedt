@@ -1,6 +1,10 @@
 # Unreal Engine Development Tool
 
-Available commands:
+## Usage:
+
+Put UEDT.py file next to the *.uproject. Execute it using `python UEDT.py <commant>`
+
+## Available commands:
 
 - `build`
   - Build project.
