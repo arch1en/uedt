@@ -231,7 +231,12 @@ def GetUProjectFileData():
     import json
     
     with open(GetUProjectPath(), 'r') as f:
-        return json.loads(f.read())
+        try:
+            json_object = json.loads(f.read())
+            return json_object
+        except ValueError as e:
+            logging.getLogger().error(f"Cannot parse {GetUProjectPath()} file. {e}")
+            sys.exit(1)
     
 # [TestRequired]
 def GetAssociatedEngineDir():
